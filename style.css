@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
+:root {
+  --primary-color: #FDF4E6;
+  --secondary-color: #FFFCF8;
+}
+
+.upper-container {
+  height: 60vh;
+  background-color: var(--primary-color);
+  width: 100vw;
+  position: relative;
+}
+
+.left-design {
+  position: absolute;
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--secondary-color); /*lightcolor - bottom left*/
+  border-radius: 50%;
+  top: 45vh;
+  z-index: 1;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 90%;
+}
+
+.lower-container {
+  width: 100vw;
+  height: 40vh;
+  background-color: var(--secondary-color);
+}
+
+
+.right-design {
+  position: absolute;
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--primary-color); /*darkcolor object - bottom right*/
+  border-radius: 50%;
+  top: 15vh;
+  left: 48vw;
+  z-index: 0;
+}
+
+
+.content-box {
+  position: absolute;
+  width: 40vh;
+  height: 60vh;
+  background-color: #FFFFFF;
+  border-radius: 8%;
+  box-shadow: 5px 10px 18px #170040;
+  z-index: 4;
+  top: 30%;
+  left: 50%;
+  margin-left: -20vh; /* To center the absolutely posi ele use left 50 and margin-left -width/2
+}
+
+h1 {
+  position: absolute;
+  z-index: 1;
+  font-size: 8vh;
+  font-family: 'Lora', serif;
+  text-align: center;
+  width: 100%; /* Must be set to use text-align: center bcoz the absolutely positioned elements takes up the width of content */
+}
+
+section {
+  font-family: 'Lora', serif;
+  text-align: center;
+  font-size: 3vh;
+}
