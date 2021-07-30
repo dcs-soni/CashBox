@@ -7,7 +7,7 @@ var paidAmount = document.querySelector(".paid-amount");
 var billBtn = document.querySelector(".bill-next-btn");
 var paidBtn = document.querySelector(".paid-next-btn");
 
-//Statement Divs
+//Statement Div
 var statement = document.querySelector(".statement");
 
 //Containers - visible/hidden
@@ -33,27 +33,31 @@ function showBill() {
 
 function showNotes() {
   paidBtn.style.display = "none"; //Hides next btn below paid div
-  console.log("bill amount", billAmount.value);
 
-  if(billAmount.value > paidAmount.value){
+  if(Number(billAmount.value) > Number(paidAmount.value)){
+    console.log("check");
     statement.innerHTML = "Please pay more";
   }
 
   if(billAmount.value === paidAmount.value){
+    console.log("test");
     statement.style.margin = "2rem";
     statement.innerHTML = "Thank you for paying";
   }
 
 
-  if(billAmount.value < paidAmount.value) {
+  if(Number(billAmount.value) < Number(paidAmount.value)) {
+    console.log("testttt");
     notesContainer.style.display = "block";
 
     var notes = [500, 100, 50, 20, 10, 5, 1];
 
     var returnAmt = paidAmount.value - billAmount.value;
     console.log("return", returnAmt);
+    // let count  = 0;
 
     for(var i=0; i<notes.length; i++){
+
       if(Math.floor(returnAmt / notes[i]) >= 1) {
     
         currentNote = notes[i];
@@ -61,13 +65,11 @@ function showNotes() {
   
         console.log("curr",currentNote);
         document.getElementById(`${notes[i]}`).innerText = `${note}`;
-        // console.log("newvar", newvar);
-        // newvar.innerText = " ";
-        // newvar.innerText = `${note}`;
-        // document.querySelector(`#{note}`);
 
-        var nextRemaiAmount = returnAmt - notes[i];
+        var nextRemaiAmount = returnAmt - note * notes[i];
         var returnAmt = nextRemaiAmount;
+
+        // i = 0;
 
       }
     }
