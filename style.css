@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
 
 :root {
-  --primary-color: #FDF4E6;
-  --secondary-color: #FFFCF8;
+  --primary-color: #e4f0ff
+    /*#FDF4E6*/
+  ;
+  --secondary-color: #465e8e
+    /*#FFFCF8*/
+  ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow: hidden;
 }
 
 .upper-container {
@@ -16,11 +31,12 @@
   position: absolute;
   width: 60vw;
   height: 60vh;
-  background-color: var(--secondary-color); /*lightcolor - bottom left*/
-  border-radius: 50%;
-  top: 45vh;
+  background-color: var(--secondary-color);
+  /*lightcolor - bottom left*/
+  border-radius: 0%;
+  top: 38vh;
   z-index: 1;
-  border-top-left-radius: 10%;
+  /* border-top-left-radius: 10%;  */
   border-top-right-radius: 90%;
 }
 
@@ -30,45 +46,88 @@
   background-color: var(--secondary-color);
 }
 
+.github-logo {
+  position: absolute;
+  right: 2rem;
+  width: 1.5rem;
+  top: 1rem;
+  z-index: 1;
+
+}
+
 
 .right-design {
   position: absolute;
   width: 60vw;
   height: 60vh;
-  background-color: var(--primary-color); /*darkcolor object - bottom right*/
+  background-color: var(--primary-color);
+  /*darkcolor object - bottom right*/
   border-radius: 50%;
   top: 15vh;
   left: 48vw;
   z-index: 0;
 }
 
+p {
+  color: var(--secondary-color);
+}
+
+
+
 
 .content-box {
   position: absolute;
-  width: 50vh;
+  width: 17rem;
   height: 60vh;
   background-color: #FFFFFF;
   border-radius: 8%;
   box-shadow: 5px 10px 18px #170040;
   z-index: 4;
-  top: 25%;
+  min-width: 30vw;
+  padding: 20px;
   left: 50%;
-  margin-left: -25vh;
+  transform: translate(-50%, 50%);
 }
 
 h1 {
   position: absolute;
   z-index: 1;
+  margin-top: 1rem;
   font-size: 8vh;
   font-family: 'Lora', serif;
   text-align: center;
-  width: 100%; /* Must be set to use text-align: center bcoz the absolutely positioned elements takes up the width of content */
+  width: 100%;
+  /* Must be set to use text-align: center bcoz the absolutely positioned elements takes up the width of content */
 }
 
 section {
   font-family: 'Lora', serif;
   text-align: center;
   font-size: 3vh;
+}
+
+/* .money {
+  position: absolute;
+  z-index: 1;
+  width: 40px;
+  top: 2rem;
+  left: 35rem;
+}
+
+.money-rotate {
+  left: 57rem;
+} */
+
+input {
+  margin: 1rem;
+  border-radius: 5px;
+  height: 2rem;
+}
+
+.btn {
+  width: 4rem;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .bill-next-btn {
@@ -101,9 +160,27 @@ table td {
   font-size: 2vh;
   width: 4vh;
   text-align: center;
+  padding: 2px;
 
 }
 
 input {
   text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+
+
+  .github-logo {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .money {
+    top: 6rem;
+  }
+
+  .money-rotate {
+    left: 190px;
+  }
 }
